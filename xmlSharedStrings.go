@@ -10,8 +10,8 @@
 package excelize
 
 import (
+	"bytes"
 	"encoding/xml"
-	"strings"
 )
 
 // xlsxSST directly maps the sst element from the namespace
@@ -38,7 +38,7 @@ type xlsxSI struct {
 
 func (x xlsxSI) String() string {
 	if len(x.R) > 0 {
-		var rows strings.Builder
+		var rows bytes.Buffer
 		for _, s := range x.R {
 			rows.WriteString(s.T)
 		}
