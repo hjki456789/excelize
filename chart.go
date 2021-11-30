@@ -508,7 +508,7 @@ func parseFormatChartSet(formatSet string) (*formatChart, error) {
 //    import (
 //        "fmt"
 //
-//        "github.com/360EntSecGroup-Skylar/excelize"
+//        "github.com/kerwinruby/excelize"
 //    )
 //
 //    func main() {
@@ -706,7 +706,7 @@ func parseFormatChartSet(formatSet string) (*formatChart, error) {
 //    import (
 //        "fmt"
 //
-//        "github.com/360EntSecGroup-Skylar/excelize"
+//        "github.com/kerwinruby/excelize"
 //    )
 //
 //    func main() {
