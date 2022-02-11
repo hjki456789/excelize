@@ -1,4 +1,4 @@
-module github.com/kerwinruby/excelize/v2
+module github.com/kerwinruby/excelize
 
 go 1.12
 
