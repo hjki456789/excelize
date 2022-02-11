@@ -7,7 +7,7 @@ import (
 	"github.com/mohae/deepcopy"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/kerwinruby/excelize/v2"
+	"github.com/kerwinruby/excelize"
 )
 
 var _ = []excelize.SheetPrOption{

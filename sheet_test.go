@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/kerwinruby/excelize/v2"
+	"github.com/kerwinruby/excelize"
 
 	"github.com/mohae/deepcopy"
 	"github.com/stretchr/testify/assert"
