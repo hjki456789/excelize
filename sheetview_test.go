@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/kerwinruby/excelize"
+	"github.com/hjki456789/excelize"
 )
 
 var _ = []excelize.SheetViewOption{

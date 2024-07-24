@@ -32,17 +32,17 @@ type PivotTableOption struct {
 // field. The default value is sum. The possible values for this attribute
 // are:
 //
-//     Average
-//     Count
-//     CountNums
-//     Max
-//     Min
-//     Product
-//     StdDev
-//     StdDevp
-//     Sum
-//     Var
-//     Varp
+//	Average
+//	Count
+//	CountNums
+//	Max
+//	Min
+//	Product
+//	StdDev
+//	StdDevp
+//	Sum
+//	Var
+//	Varp
 //
 // Name specifies the name of the data field. Maximum 255 characters
 // are allowed in data field name, excess characters will be truncated.
@@ -58,44 +58,43 @@ type PivotTableField struct {
 // For example, create a pivot table on the Sheet1!$G$2:$M$34 area with the
 // region Sheet1!$A$1:$E$31 as the data source, summarize by sum for sales:
 //
-//    package main
+//	package main
 //
-//    import (
-//        "fmt"
-//        "math/rand"
+//	import (
+//	    "fmt"
+//	    "math/rand"
 //
-//        "github.com/kerwinruby/excelize"
-//    )
+//	    "github.com/hjki456789/excelize"
+//	)
 //
-//    func main() {
-//        f := excelize.NewFile()
-//        // Create some data in a sheet
-//        month := []string{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
-//        year := []int{2017, 2018, 2019}
-//        types := []string{"Meat", "Dairy", "Beverages", "Produce"}
-//        region := []string{"East", "West", "North", "South"}
-//        f.SetSheetRow("Sheet1", "A1", &[]string{"Month", "Year", "Type", "Sales", "Region"})
-//        for i := 0; i < 30; i++ {
-//            f.SetCellValue("Sheet1", fmt.Sprintf("A%d", i+2), month[rand.Intn(12)])
-//            f.SetCellValue("Sheet1", fmt.Sprintf("B%d", i+2), year[rand.Intn(3)])
-//            f.SetCellValue("Sheet1", fmt.Sprintf("C%d", i+2), types[rand.Intn(4)])
-//            f.SetCellValue("Sheet1", fmt.Sprintf("D%d", i+2), rand.Intn(5000))
-//            f.SetCellValue("Sheet1", fmt.Sprintf("E%d", i+2), region[rand.Intn(4)])
-//        }
-//        if err := f.AddPivotTable(&excelize.PivotTableOption{
-//            DataRange:       "Sheet1!$A$1:$E$31",
-//            PivotTableRange: "Sheet1!$G$2:$M$34",
-//            Rows:            []excelize.PivotTableField{{Data: "Month"}, {Data: "Year"}},
-//            Columns:         []excelize.PivotTableField{{Data: "Type"}},
-//            Data:            []excelize.PivotTableField{{Data: "Sales", Name: "Summarize", Subtotal: "Sum"}},
-//        }); err != nil {
-//            fmt.Println(err)
-//        }
-//        if err := f.SaveAs("Book1.xlsx"); err != nil {
-//            fmt.Println(err)
-//        }
-//    }
-//
+//	func main() {
+//	    f := excelize.NewFile()
+//	    // Create some data in a sheet
+//	    month := []string{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
+//	    year := []int{2017, 2018, 2019}
+//	    types := []string{"Meat", "Dairy", "Beverages", "Produce"}
+//	    region := []string{"East", "West", "North", "South"}
+//	    f.SetSheetRow("Sheet1", "A1", &[]string{"Month", "Year", "Type", "Sales", "Region"})
+//	    for i := 0; i < 30; i++ {
+//	        f.SetCellValue("Sheet1", fmt.Sprintf("A%d", i+2), month[rand.Intn(12)])
+//	        f.SetCellValue("Sheet1", fmt.Sprintf("B%d", i+2), year[rand.Intn(3)])
+//	        f.SetCellValue("Sheet1", fmt.Sprintf("C%d", i+2), types[rand.Intn(4)])
+//	        f.SetCellValue("Sheet1", fmt.Sprintf("D%d", i+2), rand.Intn(5000))
+//	        f.SetCellValue("Sheet1", fmt.Sprintf("E%d", i+2), region[rand.Intn(4)])
+//	    }
+//	    if err := f.AddPivotTable(&excelize.PivotTableOption{
+//	        DataRange:       "Sheet1!$A$1:$E$31",
+//	        PivotTableRange: "Sheet1!$G$2:$M$34",
+//	        Rows:            []excelize.PivotTableField{{Data: "Month"}, {Data: "Year"}},
+//	        Columns:         []excelize.PivotTableField{{Data: "Type"}},
+//	        Data:            []excelize.PivotTableField{{Data: "Sales", Name: "Summarize", Subtotal: "Sum"}},
+//	    }); err != nil {
+//	        fmt.Println(err)
+//	    }
+//	    if err := f.SaveAs("Book1.xlsx"); err != nil {
+//	        fmt.Println(err)
+//	    }
+//	}
 func (f *File) AddPivotTable(opt *PivotTableOption) error {
 	// parameter validation
 	dataSheet, pivotTableSheetPath, err := f.parseFormatPivotTableSet(opt)
